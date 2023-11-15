@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Űrlap</title>
 </head>
-<body>
+<body style="background-color: blanchedalmond;">
 <style>
     div.a {
         text-align: center;
@@ -16,14 +16,50 @@
 <h2>Pizza Rendelés</h2>
 <form action="/action_page.php">
     <label for="fname">Vezetéknév:</label><br>
-    <input type="text" id="fname" name="fname" value="Silló"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Károly"><br><br>
+    <input type="text" id="fname" name="fname" value="Pld. Takács"><br>
+    <label for="lname">Keresztnév:</label><br>
+    <input type="text" id="lname" name="lname" value="Pld. Károly"><br>
+    <label for="lname">Email címed.</label><br>
+    <input type="text" id="fname" name="fname" value="Pld. infom@gmail.com"><br>
+    <br>
+    <legend>Pizza Nagysága</legend>
+    <input type="radio" name="Pizza Nagysága" id="p1">
+    <label for="p1">30cm</label>
+    <input type="radio" name="Pizza Nagysága" id="p2">
+    <label for="p2">45cm</label>
+    <br>
+    <br>
+    <legend>Feltétek</legend>
+    <input type="checkbox" name="Feltétek" id="s1">
+    <label for="s1">Sajt</label>
+    <br>
+    <input type="checkbox" name="Feltétek" id="s2">
+    <label for="s2">Sonka</label>
+    <br>
+    <input type="checkbox" name="Feltétek" id="s3">
+    <label for="s3">Virsli</label>
+    <br>
+    <input type="checkbox" name="Feltétek" id="s4">
+    <label for="s4">Szalálmi</label>
+    <br>
+    <input type="checkbox" name="Feltétek" id="s5">
+    <label for="s4">Gyros Hús</label>
+
+    <p>Egyéb megjegyzés<p>
+
+<form action="/action_page.php">
+  <textarea name="message" rows="10" cols="30">Ide ird be.</textarea>
+  <br><br>
+  <p>Kiszállítás ideje</p>
+  <input type="date" name="ido" id="ido">
+  <br>
+  <p></p>
+  <input type="time" name="ido" id="ido2">
+
+</form>
+    <form action="/action_page.php"></form>
+    <br>
     <input type="submit" value="Beküldés">
 </form>
 
-<form action="/action_page.php">
-    <input type="text" name="" id="">
-</form>
-<p>Proba</p>
 </html> 
