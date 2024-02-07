@@ -17,3 +17,24 @@
     height: 150px;
     color: chartreuse;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .season {
+    text-align: center;
+    flex-grow: 3;
+  }
+  
+  .season img {
+    width: 20%;
+    height: auto;
+  }
+  
+  .season p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
