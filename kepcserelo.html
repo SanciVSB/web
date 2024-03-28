@@ -11,13 +11,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 100vh;
     margin: 0;
   }
   #image1, #image2 {
     width: 200px;
     height: 200px;
-    cursor: pointer;
     transition: transform 0.3s ease-in-out;
   }
   #image1:hover, #image2:hover {
@@ -27,25 +26,27 @@
 </head>
 <body>
 <!-- Alapértelmezett és cserélendő képek megjelenítése -->
-<img id="image1" src="cat.jpg" alt="Cica">
+<img id="image1" src="cat.jpg" alt="Macska">
 <img id="image2" src="dogg.jpg" alt="Kutya">
+
+<!-- Gombok hozzáadása -->
+<button onclick="showCat()">Gomb 1</button>
+<button onclick="swapImages()">Gomb 2</button>
 
 <script>
   // Képcsere funkció
-  document.getElementById('image1').addEventListener('click', function() {
-    swapImages();
-  });
-
-  document.getElementById('image2').addEventListener('click', function() {
-    swapImages();
-  });
-
   function swapImages() {
     var image1 = document.getElementById('image1');
     var image2 = document.getElementById('image2');
     var tempSrc = image1.src;
     image1.src = image2.src;
     image2.src = tempSrc;
+  }
+
+  // Macska megjelenítése, kutya elrejtése
+  function showCat() {
+    document.getElementById('image1').src = 'macska.jpg';
+    document.getElementById('image2').style.display = 'none';
   }
 </script>
 </body>
