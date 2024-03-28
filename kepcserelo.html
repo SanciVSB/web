@@ -26,27 +26,28 @@
 </head>
 <body>
 <!-- Alapértelmezett és cserélendő képek megjelenítése -->
-<img id="image1" src="cat.jpg" alt="Macska">
-<img id="image2" src="dogg.jpg" alt="Kutya">
+<img id="image1" src="cat.jpg" alt="Alapértelmezett kép">
+<img id="image2" src="dogg.jpg" alt="Cserélendő kép">
 
 <!-- Gombok hozzáadása -->
-<button onclick="showCat()">Gomb 1</button>
-<button onclick="swapImages()">Gomb 2</button>
+<button onclick="showCat()">Macska</button>
+<button onclick="swapImages()">Kutya</button>
 
 <script>
   // Képcsere funkció
   function swapImages() {
-    var image1 = document.getElementById('image1');
-    var image2 = document.getElementById('image2');
-    var tempSrc = image1.src;
-    image1.src = image2.src;
+    var image1 = document.getElementById('Macska');
+    var image2 = document.getElementById('Kutya');
+    var tempSrc = Macska.src;
+    image1.src = Kutya.src;
     image2.src = tempSrc;
   }
 
   // Macska megjelenítése, kutya elrejtése
   function showCat() {
-    document.getElementById('image1').src = 'macska.jpg';
-    document.getElementById('image2').style.display = 'none';
+    document.getElementById('Macska').src = 'macska.jpg';
+    document.getElementById('Kutya').src = 'kutya.jpg';
+    document.getElementById('Kutya').style.display = 'inline-block';
   }
 </script>
 </body>
