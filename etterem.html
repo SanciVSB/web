@@ -1,0 +1,313 @@
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitalált Étterem vagy Kávézó</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Fejléc -->
+  <header class="text-center py-5">
+    <h1 class="display-4">Szirma Pizzéria</h1>
+    <p class="lead">Üdvözöljük az éttermünk weboldalán! Kóstolja meg ínycsiklandó fogásainkat és italainkat.</p>
+  </header>
+
+  <!-- Navigációs menü -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kezdőlap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#menu">Étlap</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kapcsolat</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Főoldal -->
+  <section id="home" class="py-5 text-center">
+    <div class="container">
+      <img src="image0_0.jpg" alt="Étterem" class="img-fluid rounded-circle mb-4" style="max-width: 300px;">
+      <h2 class="mb-3">Üdvözöljük az éttermünkben!</h2>
+      <p class="lead">Kóstolja meg fantasztikus fogásainkat és italainkat, valamint élvezze az elegáns környezetet.</p>
+    </div>
+  </section>
+
+  <!-- Étlap -->
+  <section id="menu" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Étlap</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card mb-4">
+                <img src="sonkas.jpg" alt="Étel" class="card-img-top" id="dish1" onmouseover="zoomIn('dish1')" onmouseout="zoomOut('dish1')">
+                <div class="card-body">
+                  <h5 class="card-title">Sonkás Pizza</h5>
+                  <p>Feltétek: Sonka, Sajt</p>
+                  <p class="card-text">Válasszon méretet:</p>
+                  <select class="form-control mb-2" onchange="changePrice(this.value, 'price1')">
+                    <option value="32">32cm</option>
+                    <option value="38">38cm</option>
+                  </select>
+                  <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+                  <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+                </div>
+              </div>
+            </div>
+            
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="4sajtos.jpg" alt="Étel" class="card-img-top" id="dish2" onmouseover="zoomIn('dish2')" onmouseout="zoomOut('dish2')">
+            <div class="card-body">
+              <h5 class="card-title">4 Sajtos Pizza</h5>
+              <p>Feltétek: Mozzarella Sajt, Cheddar Sajt, Gouda Sajt, Feta Sajt</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price2')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price2">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="gombas.jpg" alt="Étel" class="card-img-top" id="dish3" onmouseover="zoomIn('dish3')" onmouseout="zoomOut('dish3')">
+            <div class="card-body">
+              <h5 class="card-title">Gombás Pizza</h5>
+              <p>Feltétek: Sajt, Gomba</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price3')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price3">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="pepperonis.jpg" alt="Étel" class="card-img-top" id="dish4" onmouseover="zoomIn('dish4')" onmouseout="zoomOut('dish4')">
+            <div class="card-body">
+              <h5 class="card-title">Pepperónis Pizza</h5>
+              <p>Feltétek: Pepperóni, Sajt</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price4')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price4">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="margareta.jpg" alt="Étel" class="card-img-top" id="dish5" onmouseover="zoomIn('dish5')" onmouseout="zoomOut('dish5')">
+            <div class="card-body">
+              <h5 class="card-title">Margaréta Pizza</h5>
+              <p>Feltétek: Sajt, Olívabogyók, Spenót, Szalonna, Sonka</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price5')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price5">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="hawaii.jpg" alt="Étel" class="card-img-top" id="dish6" onmouseover="zoomIn('dish6')" onmouseout="zoomOut('dish6')">
+            <div class="card-body">
+              <h5 class="card-title">Hawaii Pizza</h5>
+              <p>Feltétek: Ananász, Sajt, Sonka</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price6')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price6">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="mexico.jpg" alt="Étel" class="card-img-top" id="dish7" onmouseover="zoomIn('dish7')" onmouseout="zoomOut('dish7')">
+            <div class="card-body">
+              <h5 class="card-title">Mexikói Pizza</h5>
+              <p>Feltétek: Csirkemell, Jalapeno paprika, Bab, Kukorica, Paradicsom, Cheddar sajt</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price7')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price7">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="Capricciosapizza.jpg" alt="Étel" class="card-img-top" id="dish8" onmouseover="zoomIn('dish8')" onmouseout="zoomOut('dish8')">
+            <div class="card-body">
+              <h5 class="card-title">Capricciosa Pizza</h5>
+              <p>Feltétek: Tojás, Articsóka krém, Kapribogyók, Sardella, Fokhagyma</p>
+              <p class="card-text">Válasszon méretet:</p>
+              <select class="form-control mb-2" onchange="changePrice(this.value, 'price8')">
+                <option value="32">32cm</option>
+                <option value="38">38cm</option>
+              </select>
+              <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+              <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+              <p class="card-text">Ár: <span id="price8">3500</span> Ft</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <section id="menu" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Italok</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card mb-4">
+              <img src="sprite.png" alt="Ital" class="card-img-top" id="drink1" onmouseover="zoomIn('drink1')" onmouseout="zoomOut('drink1')">
+              <div class="card-body">
+                <h5 class="card-title">Sprite</h5>
+                <select class="form-control mb-2" onchange="changePrice(this.value, 'price1', 'drink1')">
+                  <option value="650">0.5L</option>
+                </select>
+                <p class="card-text">Ár: <span id="price1">3500</span> Ft</p>
+                <button class="btn btn-primary btn-block" onclick="addToCart('Sonkás Pizza', getPrice('price1'))">Kosárba</button>
+                <p class="card-text">Ár: <span id="price1">650</span> Ft</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+    <script>
+    
+      function zoomIn(imageId) {imageId:
+        // Kép nagyítása
+      }
+    
+      function zoomOut(imageId) {
+        // Kép alapméretre állítása
+      }
+    function zoomIn(id) {
+      document.getElementById(id).style.transform = "scale(1.05)";
+      document.getElementById(id).style.transition = "transform 0.5s";
+    }
+  
+    function zoomOut(id) {
+      document.getElementById(id).style.transform = "scale(1)";
+    }
+  
+    function changePrice(size, spanId) {
+      const price = (size == 32) ? 3500 : 4000; // Ár függvényét módosítottam, hogy a nagyobb méretű pizzák drágábbak legyenek
+      document.getElementById(spanId).textContent = price;
+    }
+  </script>
+  
+        <!-- további ételek kártyái -->
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function zoomIn(id) {
+      document.getElementById(id).style.transform = "scale(1.05)";
+      document.getElementById(id).style.transition = "transform 0.5s";
+    }
+  
+    function zoomOut(id) {
+      document.getElementById(id).style.transform = "scale(1)";
+    }
+  
+    function changePrice(size, spanId) {
+      const price = (size == 32) ? 3500 : 4000; // Ár függvényét módosítottam, hogy a nagyobb méretű pizzák drágábbak legyenek
+      document.getElementById(spanId).textContent = price;
+    }
+  </script>
+        <!-- további ételek kártyái -->
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function zoomIn(id) {
+      document.getElementById(id).style.transform = "scale(1.05)";
+      document.getElementById(id).style.transition = "transform 0.5s";
+    }
+  
+    function zoomOut(id) {
+      document.getElementById(id).style.transform = "scale(1)";
+    }
+  </script>
+        <!-- további ételek kártyái -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Kapcsolat -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Kapcsolat</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <form>
+            <div class="form-group">
+              <label for="name">Név</label>
+              <input type="text" class="form-control" id="name" placeholder="Adja meg a nevét">
+            </div>
+            <div class="form-group">
+              <label for="email">Email cím</label>
+              <input type="email" class="form-control" id="email" placeholder="Adja meg az email címét">
+            </div>
+            <div class="form-group">
+              <label for="message">Üzenet</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Írja ide üzenetét"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Küldés</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lábléc -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>Minden jog fenntartva &copy; Szirma Pizzéria</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
