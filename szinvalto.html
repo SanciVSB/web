@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Színváltó</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        #colorSquare {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+        }
+        #colorPicker {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Színváltó</h1>
+    <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+    <div id="colorSquare"></div>
+    <script>
+        function changeColor(color) {
+            document.getElementById('colorSquare').style.backgroundColor = color;
+            // Betűszín változtatása a háttérszín alapján
+            var textColor = getContrastColor(color);
+            document.body.style.backgroundColor = color;
+            document.body.style.color = textColor;
+        }
+
+        function getContrastColor(hexColor) {
+            // Hexadecimális szín konvertálása RGB-re
+            var r = parseInt(hexColor.substr(1, 2), 16);
+            var g = parseInt(hexColor.substr(3, 2), 16);
+            var b = parseInt(hexColor.substr(5, 2), 16);
+            // Luminance számítás
+            var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            // Kontrasztos szín kiválasztása
+            return (luminance > 0.5) ? '#000000' : '#ffffff';
+        }
+    </script>
+</body>
+</html>
