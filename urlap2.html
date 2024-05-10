@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hírlevél feliratkozás</title>
+</head>
+<body>
+    <h2>Feliratkozás a hírlevélre</h2>
+    <form id="subscriptionForm">
+        <label for="name">Név:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">E-mail cím:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="checkbox" id="acceptTerms" required>
+        <label for="acceptTerms">Elfogadom a szerződési feltételeket</label><br><br>
+
+        <input type="checkbox" id="acceptAgreement" required>
+        <label for="acceptAgreement">Elfogadom az Általános Szerződési Feltételeket</label><br><br>
+
+        <input type="submit" id="submitButton" value="Feliratkozás" disabled>
+    </form>
+
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+
+            alert('Sikeresen feliratkoztál a hírlevélre. Köszönjük!');
+            location.reload();
+        });
+
+        function checkForm() {
+            var submitButton = document.getElementById('submitButton');
+            var acceptTerms = document.getElementById('acceptTerms').checked;
+            var acceptAgreement = document.getElementById('acceptAgreement').checked;
+            
+            if (acceptTerms && acceptAgreement) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        document.getElementById('acceptTerms').addEventListener('change', checkForm);
+        document.getElementById('acceptAgreement').addEventListener('change', checkForm);
+    </script>
+</body>
+</html>
+
